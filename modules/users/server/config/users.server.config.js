@@ -40,7 +40,7 @@ module.exports = function(app) {
               });
 
               user.dataValues.roles = roleArray;
-              
+
               done(null, user);
 
               return null;

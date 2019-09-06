@@ -25,7 +25,6 @@ module.exports = function() {
         done(null, false, {
           message: 'Invalid username or password'
         });
-
         return null;
       }
 

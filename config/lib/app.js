@@ -6,8 +6,7 @@
 var config = require('../config'),
   chalk = require('chalk'),
   sequelize = require('./sequelize'),
-  express = require('./express'),
-  seed = require('./seed');
+  express = require('./express');
 
 chalk.enabled = true;
 
@@ -15,9 +14,9 @@ chalk.enabled = true;
 module.exports.init = function init(callback) {
 
   if (config.db.sync.force) {
-    console.log(chalk.bold.red('Warning:\tDB_FORCE is true'));  
+    console.log(chalk.bold.red('Warning:\tDB_FORCE is true'));
   }
-  
+
   sequelize.sequelize
   .sync({
     force: config.db.sync.force
@@ -26,15 +25,10 @@ module.exports.init = function init(callback) {
     var app = express.init(db);
 
     // Seed
-    if (config.db.sync.force) {  
+    if (config.db.sync.force) {
       seed.setup();
     }
-    
-    if (config.seed.init) {
-      console.log(chalk.bold.red('Warning:\tDB_SEED is true'));
-      seed.start();
-    } 
-    
+
     if (callback) {
       callback(app, db, config);
     }
