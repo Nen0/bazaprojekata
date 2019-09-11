@@ -24,10 +24,7 @@ module.exports.init = function init(callback) {
   .then(function (db) {
     var app = express.init(db);
 
-    // Seed
-    if (config.db.sync.force) {
-      seed.setup();
-    }
+   
 
     if (callback) {
       callback(app, db, config);
