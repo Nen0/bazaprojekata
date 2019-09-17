@@ -6,7 +6,9 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a ui-sref="home" class="navbar-brand">PEAN.JS</a>
+    <a ui-sref="home" class="navbar-brand" style="font-size:14px;padding-top:14px;font-weight: bold;">
+      <img src="modules/core/client/img/brand/logo-bird-reverse.png" style="height:35px;width: auto;margin-top:-10px;display:inline"> Poticanje čitanja
+    </a>
   </div>
   <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
     <ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">
@@ -21,12 +23,23 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
-      <li ui-sref-active="active">
-        <a ui-sref="authentication.signup">Sign Up</a>
+     <!--  <li ui-sref-active="active">
+        <a ui-sref="authentication.signup">Registracija</a>
+      </li> -->
+      <li>
+        <div class="input-group" style="padding:10px">
+            <input type="text" class="form-control" style="height:30px" placeholder="Traži..." name="q">
+            <div class="input-group-btn">
+                <button class="btn btn-default" style="height:30px" type="submit">
+                  <i class="fa fa-search" ></i></button>
+            </div>
+        </div>
       </li>
+     
+
       <li class="divider-vertical"></li>
       <li ui-sref-active="active">
-        <a ui-sref="authentication.signin">Sign In</a>
+        <a ui-sref="authentication.signin"><span class="fa fa-user"></span> Prijava</a>
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
@@ -57,3 +70,7 @@
     </ul>
   </nav>
 </div>
+ 
+
+
+ 

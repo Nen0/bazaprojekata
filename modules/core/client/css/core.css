@@ -43,3 +43,15 @@ a:hover .header-profile-image {
   padding-top: 11px !important;
   padding-bottom: 11px !important;
 }
+
+
+/*dodala*/
+
+
+.footer_bottom {
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+}
+
+
