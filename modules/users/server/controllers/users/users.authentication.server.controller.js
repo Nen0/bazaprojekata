@@ -27,7 +27,7 @@ exports.signup = function(req, res) {
   // Add missing user fields
   var provider = 'local';
   var displayName = req.body.firstName + ' ' + req.body.lastName;
-
+  console.log(req.body);
   // Save user
   db.User
     .create({
@@ -107,6 +107,7 @@ exports.signin = function(req, res, next) {
     if (err || !user) {
       res.status(400).send(info);
     } else {
+      console.log(user);
       req.login(user, function(err) {
         if (err) {
           res.status(400).send(err);

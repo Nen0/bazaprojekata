@@ -21,9 +21,13 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       url: '/projekti',
       templateUrl: 'modules/projekti/client/views/projekti.client.view.html'
     })
-    .state('test', {
-      url: '/test',
-      templateUrl: 'modules/test/client/views/test.client.view.html'
+    .state('programi', {
+      url: '/programi',
+      templateUrl: 'modules/programi/client/views/programi.client.view.html'
+    })
+    .state('istrazivanja', {
+      url: '/istrazivanja',
+      templateUrl: 'modules/istrazivanja/client/views/istrazivanja.client.view.html'
     })
     .state('not-found', {
       url: '/not-found',

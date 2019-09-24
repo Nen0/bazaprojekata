@@ -24,19 +24,6 @@ var hashPassword = function(user, password) {
 };
 
 /**
- * Check image
- * @param  {[type]} user [description]
- * @return {[type]}      [description]
- */
-var checkImage = function(user) {
-  var profileImageURLDefault = 'modules/users/client/img/profile/default.png';
-
-  if (!user.dataValues.profileImageURL) {
-    user.dataValues.profileImageURL = profileImageURLDefault;
-  }
-};
-
-/**
  * Check password
  * @param  {[type]} user [description]
  * @return {[type]}      [description]
@@ -98,25 +85,7 @@ module.exports = function(sequelize, DataTypes) {
       },
       type: DataTypes.STRING
     },
-    salt: DataTypes.STRING,
-    profileImageURL: {
-      type: DataTypes.STRING
-    },
-    provider: {
-      type: DataTypes.STRING
-    },
-    providerData: {
-      type: DataTypes.JSONB
-    },
-    additionalProvidersData: {
-      type: DataTypes.JSONB
-    },
-    resetPasswordToken: {
-      type: DataTypes.STRING
-    },
-    resetPasswordExpires: {
-      type: DataTypes.DATE
-    }
+    salt: DataTypes.STRING
   }, {
     classMethods: {
       /**
@@ -160,40 +129,6 @@ module.exports = function(sequelize, DataTypes) {
             callback(null);
           });
       },
-      /**
-       * Generate random passphrase
-       * @return {[type]} [description]
-       */
-      generateRandomPassphrase: function() {
-        return new Promise(function(resolve, reject) {
-          var password = '';
-          var repeatingCharacters = new RegExp('(.)\\1{2,}', 'g');
-
-          // iterate until the we have a valid passphrase. 
-          // NOTE: Should rarely iterate more than once, but we need this to ensure no repeating characters are present.
-          while (password.length < 20 || repeatingCharacters.test(password)) {
-            // build the random password
-            password = generatePassword.generate({
-              length: Math.floor(Math.random() * (20)) + 20, // randomize length between 20 and 40 characters
-              numbers: true,
-              symbols: false,
-              uppercase: true,
-              excludeSimilarCharacters: true,
-            });
-
-            // check if we need to remove any repeating characters.
-            password = password.replace(repeatingCharacters, '');
-          }
-
-          // Send the rejection back if the passphrase fails to pass the strength test
-          if (owasp.test(password).errors.length) {
-            reject(new Error('An unexpected problem occured while generating the random passphrase'));
-          } else {
-            // resolve with the validated passphrase
-            resolve(password);
-          }
-        });
-      }
     },
     instanceMethods: {
       /**
@@ -205,38 +140,6 @@ module.exports = function(sequelize, DataTypes) {
       authenticate: function(user, password) {
         return user.dataValues.password === hashPassword(user, password);
       }
-    }
-  });
-
-  /**
-   * Before create
-   * @param  {[type]} user     [description]
-   * @param  {[type]} options) { checkImage(user); checkPassword(user); } [description]
-   * @return {[type]}          [description]
-   */
-  User.beforeCreate(function(user, options) {
-    if (!user.dataValues.profileImageURL) {
-      checkImage(user);
-    }
-
-    if (user.dataValues.password && user._changed.password) {
-      checkPassword(user);
-    }
-  });
-
-  /**
-   * Before update
-   * @param  {[type]} user     [description]
-   * @param  {[type]} options) { checkImage(user); checkPassword(user); } [description]
-   * @return {[type]}          [description]
-   */
-  User.beforeUpdate(function(user, options) {
-    if (!user.dataValues.profileImageURL) {
-      checkImage(user);
-    }
-
-    if (user.dataValues.password && user._changed.password) {
-      checkPassword(user);
     }
   });
 

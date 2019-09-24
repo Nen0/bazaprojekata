@@ -1,10 +1,13 @@
-
-
-<div ng-controller="ProjektiController" class="klasa">
-	
-	First Name: <input type="text" ng-model="firstName"><br>
-	Last Name: <input type="text" ng-model="lastName"><br>
-	<br>
-	Full Name: {{firstName + " " + lastName}}
-
-</div>
+ <div ng-controller="CarouselDemoCtrl" id="slides_control">
+    <div>
+      <carousel interval="myInterval">
+        <slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}">
+          <div class="carousel-caption">
+            <h4>Slide {{$index+1}}</h4>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div> 

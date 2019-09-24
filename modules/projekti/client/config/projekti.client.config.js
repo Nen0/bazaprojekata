@@ -19,14 +19,14 @@
       state: 'programi',
       roles: ['*']
     });
-  
+
     Menus.addMenuItem('topbar', {
       title: 'Istraživanja',
       state: 'istrazivanja',
       roles: ['*']
     });
 
-   
+
 
    /* // Add the dropdown list item
     Menus.addSubMenuItem('topbar', 'projekti', {
