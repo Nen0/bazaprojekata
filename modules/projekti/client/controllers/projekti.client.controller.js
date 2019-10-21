@@ -1,12 +1,38 @@
-'use strict';
+angular.module('projekti').controller('ProjektiController', [
+    'Authentication',
+    '_',
+    '$http',
+    '$rootScope',
+    '$scope',
+    '$stateParams',
+    '$location',
+    '$modal',
 
-angular.module('projekti').controller('ProjektiController', ['$scope', 'Authentication',
-  function ($scope, Authentication) {
-    // This provides Authentication context.
-    $scope.authentication = Authentication;
-
-	$scope.firstName = "Jelena";
-	$scope.lastName ="Šodan";
-
-  }
+    function(Authentication,
+        _,
+        $http,
+        $rootScope,
+        $scope,
+        $stateParams,
+        $location,
+        $modal) {
+        $scope.mainGridOptions = {
+            dataSource: {
+                type: "json",
+                transport: {
+                    read: {
+                        url: "/api/projektilist"
+                    }
+                },
+            },
+            columns: [{
+                title: "id",
+                field: "id",
+                hidden: true
+            }, {
+                title: "Naziv projekta",
+                field: "naziv"
+            }]
+        };
+    }
 ]);

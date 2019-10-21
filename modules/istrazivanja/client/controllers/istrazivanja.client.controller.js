@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('programi').controller('ProgramiController', ['$scope', 'Authentication',
+angular.module('istrazivanja').controller('ProgramiController', ['$scope', 'Authentication',
   function ($scope, Authentication) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
@@ -8,3 +8,4 @@ angular.module('programi').controller('ProgramiController', ['$scope', 'Authenti
 
   }
 ]);
+

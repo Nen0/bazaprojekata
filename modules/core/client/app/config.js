@@ -8,6 +8,7 @@ var ApplicationConfiguration = (function() {
     'ngResource',
     'ngAnimate',
     'ngMessages',
+    'kendo.directives',
     'ui.router',
     'ui.bootstrap',
     'ui.utils',

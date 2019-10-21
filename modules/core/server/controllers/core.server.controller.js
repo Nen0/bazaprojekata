@@ -14,13 +14,8 @@ exports.renderIndex = function (req, res) {
       displayName: validator.escape(req.user.displayName),
       provider: validator.escape(req.user.provider),
       username: validator.escape(req.user.username),
-      createdAt: req.user.createdAt.toString(),
       roles: req.user.dataValues.roles,
-      profileImageURL: req.user.profileImageURL,
-      email: validator.escape(req.user.email),
-      lastName: validator.escape(req.user.lastName),
-      firstName: validator.escape(req.user.firstName),
-      additionalProvidersData: req.user.additionalProvidersData
+      email: validator.escape(req.user.email)
     };
   }
 

@@ -9,6 +9,7 @@ module.exports = {
         'public/lib/font-awesome/css/font-awesome.css',
       ],
       js: [
+        'public/lib/kendo-ui/js/jquery.min.js',
         'public/lib/angular/angular.js',
         'public/lib/angular-resource/angular-resource.js',
         'public/lib/angular-animate/angular-animate.js',
@@ -23,7 +24,10 @@ module.exports = {
         'public/lib/lodash/lodash.js',
         'public/lib/moment/moment.js',
         'public/lib/angular-moment/angular-moment.js',
-        'public/lib/angular-sanitize/angular-sanitize.js'
+        'public/lib/angular-sanitize/angular-sanitize.js',
+
+
+        'public/kendo/kendo.all.min.js',
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
@@ -57,7 +61,6 @@ module.exports = {
     allJS: ['server.js', 'config/**/*.js', 'modules/*/server/**/*.js'],
     models: 'modules/*/server/models/**/*.js',
     routes: ['modules/!(core)/server/routes/**/*.js', 'modules/core/server/routes/**/*.js'],
-    sockets: 'modules/*/server/sockets/**/*.js',
     config: ['modules/*/server/config/*.js'],
     policies: 'modules/*/server/policies/*.js',
     views: ['modules/*/server/views/*.html']

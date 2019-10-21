@@ -107,7 +107,6 @@ exports.signin = function(req, res, next) {
     if (err || !user) {
       res.status(400).send(info);
     } else {
-      console.log(user);
       req.login(user, function(err) {
         if (err) {
           res.status(400).send(err);

@@ -1,13 +1,5 @@
- <div ng-controller="CarouselDemoCtrl" id="slides_control">
-    <div>
-      <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}">
-          <div class="carousel-caption">
-            <h4>Slide {{$index+1}}</h4>
-          </div>
-        </slide>
-      </carousel>
-    </div>
-  </div>
-</div> 
+<div ng-controller="ProjektiController">
+  <kendo-grid id="usersGrid" options="mainGridOptions">
+    <span id="popupNotification"></span>
+  </kendo-grid>
+</div>
