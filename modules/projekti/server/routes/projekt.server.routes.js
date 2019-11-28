@@ -10,7 +10,7 @@ module.exports = function(app) {
 
     app.route('/api/projekti')
         .get(projekt.projektilist)
-        .put(projekt.updateidea)
+        .put(projekt.updateprojekt)
         .post(projekt.dodajprojekt)
 
     app.route('/api/getvrstecombo')

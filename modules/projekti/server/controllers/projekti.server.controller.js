@@ -24,15 +24,12 @@ exports.projektilist = function(req, res) {
 exports.vrstecombo = function(req, res) {
 
     db.sequelize.query(`select id, name from vrste`, {
-        raw: true
-    }).then(function(projekt) {
-        res.json({
-            "data": projekt[0],
-            "draw": 0,
-            "recordsTotal": 178,
-            "recordsFiltered": 178
+            type: db.sequelize.QueryTypes.SELECT
         })
-    });
+        .then(vrste => {
+            return res.json(vrste);
+            // We don't need spread here, since only the results will be returned for select queries
+        })
 };
 exports.dodajprojekt = function(req, res) {
     //console.log('idea kreirana');
@@ -49,7 +46,7 @@ exports.dodajprojekt = function(req, res) {
             )
             values(
                 ${req.body.name},
-                1
+                ${req.body.vrsta}
             )
             returning name
             `;
@@ -60,44 +57,26 @@ exports.dodajprojekt = function(req, res) {
     });
 };
 
-exports.updateidea = function(req, res) {
+exports.updateprojekt = function(req, res) {
     //console.log('idea updateaneasa');
     var id = req.body.id;
-    var user_id = req.session.passport.user
     var query = sql `
-                update sadrzaj set (
-                    modified_by,
-                    modified_ts,
-                    name
-                )
-                =(
-                    ${parseInt(user_id)},
-                    now(),
-                    ${req.body.naziv}
-                )
-                where id = ${id}`;
-    db.sequelize.query(query, {
-        raw: true
-    }).then(function(result) {
-        var query = sql `
-                        update projekt set(
-                           naziv
+                        update projekti set(
+                           name,
+                           vrsta_id
                         )
                         =(
-                            ${req.body.naziv}
+                            ${req.body.name},
+                            ${req.body.vrsta}
                             )
                             where id = ${id}
-                            returning id, naziv
+                            returning name
                     `;
-
         db.sequelize.query(query, {
             raw: true
         }).then(function(result) {
-            res.json({
-                "status": "success"
-            })
+            res.json(result[0])
         });
-    });
 };
 
 

@@ -25,7 +25,7 @@ module.exports.init = function init(callback) {
   .then(function (db) {
     var app = express.init(db);
 
-   
+
 
     if (callback) {
       callback(app, db, config);
