@@ -1,5 +1,79 @@
+<style>
+    html
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+    body
+    {
+        width: 100%;
+        height: 100%;
+    }
+    #userGridParent
+    {
+        width: 100%;
+        height: calc(100vh - 130px);
+    }
+    #userGrid
+    {
+        width: 100%;
+        height: 100%;
+    }
+
+</style>
+<script id="editProject" type="text/x-kendo-template">
+    <div id="example" >
+            <div id="editForm" class=" portlet-body form">
+                <div class="form-horizontal form-bordered">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Naziv</label>
+                            <div class="col-md-9">
+                                <input class="k-textbox" style="width: 100%" name="name" id="name">
+                                <input class="hidden" style="width: 100%" name="id" id="parentProjektId">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Nositelj</label>
+                            <div class="col-md-9">
+                                <input class="k-textbox" style="width: 100%" name="nositelj" id="nositelj">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Vrsta</label>
+                            <div class="col-md-9">
+                                <input name="vrsta" id="vrsta" style="width: 100%" data-text-field="name" data-value-field="id" data-bind="value:vrsta" data-filter="contains" data-source="dataSourceVrsta" data-role="dropdownlist" data-autobind="true" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Web</label>
+                            <div class="col-md-3">
+                                <input class="k-textbox" style="width: 100%" name="web" id="web">
+
+                            </div>
+                            <label class="control-label col-md-2">Telefon</label>
+                            <div class="col-md-3">
+                                <input class="k-textbox" style="width: 100%" name="telefon" id="telefon">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Opis</label>
+                            <div class="col-md-9">
+                                <textarea maxlength="1000" name="investitor" style="width: 100%" class="k-textbox" rows="6" placeholder="Opis"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</script>
+
 <div ng-controller="ProjektiController">
-  <kendo-grid id="usersGrid" options="mainGridOptions">
-    <span id="popupNotification"></span>
-  </kendo-grid>
+    <kendo-grid id="projektiGrid" options="mainGridOptions">
+        <span id="popupNotification"></span>
+    </kendo-grid>
 </div>

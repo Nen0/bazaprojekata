@@ -2,10 +2,7 @@
 
 module.exports = {
   app: {
-    title: 'PEAN.JS',
-    description: 'Full-Stack JavaScript with PostgreSQL, Express, AngularJS, and Node.js',
-    keywords: 'postgresql, express, angularjs, node.js, sequelize, passport',
-    googleAnalyticsTrackingID: process.env.GOOGLE_ANALYTICS_TRACKING_ID || 'GOOGLE_ANALYTICS_TRACKING_ID'
+    title: 'Poticanje čitanja'
   },
   port: process.env.PORT || 3000,
   host: process.env.HOST || '0.0.0.0',
