@@ -28,7 +28,7 @@
 
      Menus.addMenuItem('topbar', {
       title: 'Kontakt',
-      state: 'Kontakt',
+      state: 'kontakt',
       roles: ['*']
     });
 

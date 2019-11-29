@@ -29,6 +29,12 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
       url: '/istrazivanja',
       templateUrl: 'modules/istrazivanja/client/views/istrazivanja.client.view.html'
     })
+
+    .state('kontakt', {
+      url: '/kontakt',
+      templateUrl: 'modules/kontakt/client/views/kontakt.client.view.html'
+    })
+
     .state('not-found', {
       url: '/not-found',
       templateUrl: 'modules/core/client/views/404.client.view.html',
