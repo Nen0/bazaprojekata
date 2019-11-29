@@ -53,11 +53,6 @@ module.exports.start = function start(callback) {
       if (process.env.NODE_ENV === 'secure') {
         console.log(chalk.green('HTTPs: on'));
       }
-      console.log(chalk.green('App version: ' + config.peanjs.version));
-      if (config.peanjs['peanjs-version']) {
-        console.log(chalk.green('PEAN.JS version: ' + config.peanjs['peanjs-version']));
-        console.log('--');
-      }
       if (callback) callback(app, db, config);
     });
   });
