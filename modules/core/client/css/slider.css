@@ -1,14 +1,26 @@
 #slides_control > div{
-  height: 200px;
+  height: 400px;
 }
 img{
   margin:auto;
-  width: 400px;
+  width: 100%;
+  height:auto;
+
 }
 #slides_control {
-  position:absolute;
-  width: 400px;
-  left:50%;
+  
+  max-width: 1170px;
+  width:100%;
+  max-height: 400px;
+/*  left:50%;
   top:20px;
- margin-left:-200px;
+ margin-left:-200px;*/
+}
+
+/*da se ne prikazuje tekst, workaround. */
+.carousel-caption {
+    right: 20%;
+    left: 20%;
+    padding-bottom: 30px;
+    display: none !important;
 }

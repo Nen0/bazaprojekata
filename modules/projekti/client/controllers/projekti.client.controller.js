@@ -1,13 +1,24 @@
-angular.module('projekti').controller('ProjektiController', function($rootScope, $scope, $http, $timeout) {
-    $scope.$on('$viewContentLoaded', function() {
-        App.initAjax(); // initialize core components
+angular.module('projekti').controller('ProjektiController', [
+    'Authentication',
+    '_',
+    '$http',
+    '$rootScope',
+    '$scope',
+    '$stateParams',
+    '$location',
+    '$modal',
 
-        // set default layout mode
-        $rootScope.settings.layout.pageContentWhite = true;
-        $rootScope.settings.layout.pageBodySolid = false;
-        $rootScope.settings.layout.pageSidebarClosed = false;
-    });
-    $scope.mainGridOptions = {
+    function(Authentication,
+        _,
+        $http,
+        $rootScope,
+        $scope,
+        $stateParams,
+        $location,
+        $modal) {
+
+
+        $scope.mainGridOptions = {
             //language:'hr-HR',
             mobile: true,
 
@@ -18,7 +29,7 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
                         type: "get",
                         dataType: "json"
                     },
-                    /*create: {
+                    create: {
                         url: "api/projekti/",
                         type: "post",
                         dataType: "json",
@@ -27,7 +38,7 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
                         }
                     },
                     update: {
-                        url: "api/projekti/",
+                        url: "api/pravni_subjekti/",
                         type: "put",
                         dataType: "json",
                         complete: function(data) {
@@ -38,7 +49,7 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
                         url: "api/delete/",
                         type: "delete",
                         dataType: "json"
-                    }*/
+                    }
                 },
                 schema: {
                     data: "data",
@@ -65,7 +76,7 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
             //  this.expandRow(this.tbody.find("tr.k-master-row").first());
             //},
 
-            //toolbar: ["create"],
+            toolbar: ["create"],
 
             filterable: {
                 mode: "row",
@@ -102,7 +113,12 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
                 },
             }, {
                 title: "Nositelj",
-                field: "nositelj"
+                field: "nositelj",
+                width: "120px",
+                headerAttributes: {
+                    style: "text-align: center; white-space: normal"
+                },
+                filterable: true
             }, {
                 field: "mjesto",
                 title: "Mjesto",
@@ -144,11 +160,11 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
                     width: "20px",
                     name: "edit",
                     text: ""
-                },/* {
+                }, {
                     width: "20px",
                     name: "destroy",
                     text: ""
-                }*/],
+                }],
                 title: "&nbsp;",
                 width: "55px"
             }],
@@ -162,16 +178,15 @@ angular.module('projekti').controller('ProjektiController', function($rootScope,
 
             }
         };
-
-    dataSourceVrsta = new kendo.data.DataSource({
+        dataSourceVrsta = new kendo.data.DataSource({
         transport: {
             read: {
-                url: "api/getvrstecombo/",
+                url: "api/combo/",
                 type: "get",
+                data: { vrsta_id: 110 },
                 dataType: "json"
             }
         }
     });
-
-
-});
+    }
+]);

@@ -26,6 +26,12 @@
       roles: ['*']
     });
 
+     Menus.addMenuItem('topbar', {
+      title: 'Kontakt',
+      state: 'Kontakt',
+      roles: ['*']
+    });
+
 
 
    /* // Add the dropdown list item

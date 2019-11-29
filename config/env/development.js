@@ -30,7 +30,7 @@ module.exports = {
 
   db: {
     options: {
-      database: 'bazaprojekata',
+      database: 'postgres',
       password: '12345',
       username: 'postgres',
       //logging: process.env.DB_LOGGING === 'true' ? console.log : false,

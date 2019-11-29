@@ -6,16 +6,19 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
         $scope.authentication = Authentication;
         $scope.myInterval = 3000;
         $scope.slides = [{
-                image: 'http://lorempixel.com/400/200/'
+                image: 'modules/core/client/img/naslovnica/naslovnica-04.jpg'
             },
             {
-                image: 'http://lorempixel.com/400/200/food'
+                image: 'modules/core/client/img/naslovnica/naslovnica-03.jpg'
             },
             {
-                image: 'http://lorempixel.com/400/200/sports'
+                image: 'modules/core/client/img/naslovnica/naslovnica-02.jpg'
             },
             {
-                image: 'http://lorempixel.com/400/200/people'
+               image: 'modules/core/client/img/naslovnica/naslovnica-05.jpg'
+            },
+            {
+               image: 'modules/core/client/img/naslovnica/naslovnica-01.jpg'
             }
         ];
     }
