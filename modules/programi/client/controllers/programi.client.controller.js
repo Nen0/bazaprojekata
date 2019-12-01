@@ -110,31 +110,33 @@ angular.module('programi').controller('ProgramiController', function($rootScope,
                 headerAttributes: {
                     style: "text-align: center; white-space: normal"
                 },
-                filterable: false
-            }, {
-                field: "web",
-                title: "Web stranica",
-                width: "120px",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
-                filterable: false
-            }, {
-                field: "telefon",
-                title: "Telefon",
-                width: "120px",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
-                filterable: false
-            }, {
+                filterable: true
+            },
+            // }, {
+            //     field: "web",
+            //     title: "Web stranica",
+            //     width: "120px",
+            //     headerAttributes: {
+            //         style: "text-align: center; white-space: normal"
+            //     },
+            //     filterable: false
+            // }, {
+            //     field: "telefon",
+            //     title: "Telefon",
+            //     width: "120px",
+            //     headerAttributes: {
+            //         style: "text-align: center; white-space: normal"
+            //     },
+            //     filterable: false
+            // },
+            {
                 field: "keywords",
                 title: "Ključne riječi",
                 width: "120px",
                 headerAttributes: {
                     style: "text-align: center; white-space: normal"
                 },
-                filterable: false
+                filterable: true
             }, {
                 field: "opis",
                 title: "opis",

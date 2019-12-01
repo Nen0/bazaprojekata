@@ -29,27 +29,27 @@ angular.module('projekti').controller('ProjektiController', [
                         type: "get",
                         dataType: "json"
                     },
-                    create: {
-                        url: "api/projekti/",
-                        type: "post",
-                        dataType: "json",
-                        complete: function(data) {
-                            $("#projektiGrid").data("kendoGrid").dataSource.read();
-                        }
-                    },
-                    update: {
-                        url: "api/pravni_subjekti/",
-                        type: "put",
-                        dataType: "json",
-                        complete: function(data) {
-                            $("#userGrid").data("kendoGrid").dataSource.read();
-                        }
-                    },
-                    destroy: {
-                        url: "api/delete/",
-                        type: "delete",
-                        dataType: "json"
-                    }
+                    // create: {
+                    //     url: "api/projekti/",
+                    //     type: "post",
+                    //     dataType: "json",
+                    //     complete: function(data) {
+                    //         $("#projektiGrid").data("kendoGrid").dataSource.read();
+                    //     }
+                    // },
+                    // update: {
+                    //     url: "api/pravni_subjekti/",
+                    //     type: "put",
+                    //     dataType: "json",
+                    //     complete: function(data) {
+                    //         $("#userGrid").data("kendoGrid").dataSource.read();
+                    //     }
+                    // },
+                    // destroy: {
+                    //     url: "api/delete/",
+                    //     type: "delete",
+                    //     dataType: "json"
+                    // }
                 },
                 schema: {
                     data: "data",
@@ -126,31 +126,33 @@ angular.module('projekti').controller('ProjektiController', [
                 headerAttributes: {
                     style: "text-align: center; white-space: normal"
                 },
-                filterable: false
-            }, {
-                field: "web",
-                title: "Web stranica",
-                width: "120px",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
-                filterable: false
-            }, {
-                field: "telefon",
-                title: "Telefon",
-                width: "120px",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
-                filterable: false
-            }, {
+                filterable: true
+            },
+            // {
+            //     field: "web",
+            //     title: "Web stranica",
+            //     width: "120px",
+            //     headerAttributes: {
+            //         style: "text-align: center; white-space: normal"
+            //     },
+            //     filterable: false
+            // }, {
+            //     field: "telefon",
+            //     title: "Telefon",
+            //     width: "120px",
+            //     headerAttributes: {
+            //         style: "text-align: center; white-space: normal"
+            //     },
+            //     filterable: false
+            // },
+            {
                 field: "keywords",
                 title: "Ključne riječi",
                 width: "120px",
                 headerAttributes: {
                     style: "text-align: center; white-space: normal"
                 },
-                filterable: false
+                filterable: true
             }, {
                 field: "opis",
                 title: "opis",
@@ -160,10 +162,10 @@ angular.module('projekti').controller('ProjektiController', [
                     width: "20px",
                     name: "edit",
                     text: ""
-                }, {
-                    width: "20px",
-                    name: "destroy",
-                    text: ""
+                // }, {
+                //     width: "20px",
+                //     name: "destroy",
+                //     text: ""
                 }],
                 title: "&nbsp;",
                 width: "55px"
