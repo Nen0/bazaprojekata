@@ -67,7 +67,7 @@ module.exports = {
   db: {
     options: {
       database: 'bazaprojekata',
-      host:'postgres://xsxslvybiuhnij:44008fb5577b9db5bcb34694ba2b82cee4fb4a010718cb1182104cc67af9bcfa@ec2-54-225-129-101.compute-1.amazonaws.com:5432/d7hnh3gd6jdd0f'
+      host:'postgres://xsxslvybiuhnij:44008fb5577b9db5bcb34694ba2b82cee4fb4a010718cb1182104cc67af9bcfa@ec2-54-225-129-101.compute-1.amazonaws.com:5432/d7hnh3gd6jdd0f',
       password: '12345',
       username: 'postgres',
       //logging: process.env.DB_LOGGING === 'true' ? console.log : false,
