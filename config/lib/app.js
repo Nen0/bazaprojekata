@@ -19,7 +19,7 @@ module.exports.init = function init(callback) {
 
   sequelize.sequelize
   .sync({
-    force: true
+    //force: true
     //force: true
   })
   .then(function (db) {
