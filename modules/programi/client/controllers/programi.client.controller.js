@@ -90,19 +90,13 @@ angular.module('programi').controller('ProgramiController', function($rootScope,
             }, {
                 field: "name",
                 title: "Naziv programa",
-                width: "190px"
-            }, {
-                title: "Vrsta",
-                field: "vrsta",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
-                attributes: {
-                    style: "text-align:center;"
-                },
-            }, {
-                title: "Nositelj",
-                field: "nositelj"
+                width: "190px",
+                filterable: true
+            },  {
+                field: "pokretac",
+                title: "Pokretač",
+                width: "190px",
+                filterable: true
             }, {
                 field: "mjesto",
                 title: "Mjesto",
@@ -137,11 +131,7 @@ angular.module('programi').controller('ProgramiController', function($rootScope,
                     style: "text-align: center; white-space: normal"
                 },
                 filterable: true
-            }, {
-                field: "opis",
-                title: "opis",
-                hidden: true
-            }, {
+            },  {
                 command: [{
                     width: "20px",
                     name: "edit",

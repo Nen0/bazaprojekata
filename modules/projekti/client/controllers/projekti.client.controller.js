@@ -76,7 +76,7 @@ angular.module('projekti').controller('ProjektiController', [
             //  this.expandRow(this.tbody.find("tr.k-master-row").first());
             //},
 
-            toolbar: ["create"],
+            //toolbar: ["create"],
 
             filterable: {
                 mode: "row",
@@ -88,7 +88,7 @@ angular.module('projekti').controller('ProjektiController', [
                 confirmation: "Je ste li sigurni da želite izbrisati odabrani unos?",
                 template: $("#editProject").html(),
                 window: {
-                    title: "Projekti - uređivanje",
+                    title: "Projekti - pregled", //treba biti uređivanje
                     animation: true
                 }
             },
@@ -98,28 +98,20 @@ angular.module('projekti').controller('ProjektiController', [
                 width: "80px",
                 filterable: false,
                 hidden: true
-            }, {
+            },
+            {
                 field: "name",
-                title: "Naziv",
-                width: "190px"
-            }, {
-                title: "Vrsta",
-                field: "vrsta",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
-                attributes: {
-                    style: "text-align:center;"
-                },
-            }, {
-                title: "Nositelj",
-                field: "nositelj",
-                width: "120px",
-                headerAttributes: {
-                    style: "text-align: center; white-space: normal"
-                },
+                title: "Naziv projekta",
+                width: "190px",
                 filterable: true
-            }, {
+            },
+             {
+                field: "pokretac",
+                title: "Pokretač",
+                width: "190px",
+                filterable: true
+            },
+            {
                 field: "mjesto",
                 title: "Mjesto",
                 width: "120px",
@@ -153,10 +145,6 @@ angular.module('projekti').controller('ProjektiController', [
                     style: "text-align: center; white-space: normal"
                 },
                 filterable: true
-            }, {
-                field: "opis",
-                title: "opis",
-                hidden: true
             }, {
                 command: [{
                     width: "20px",

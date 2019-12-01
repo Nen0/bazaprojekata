@@ -10,7 +10,10 @@ var path = require('path'),
 
 exports.projektilist = function(req, res) {
 
-    db.sequelize.query(`select p.id, p.name, v.name as vrsta, p.mjesto,p.nositelj, p.web,p.telefon, p.keywords, p.opis   from projekti p left join vrste v on p.vrsta_id =  v.id`, {
+    db.sequelize.query(`select p.id, p.name,p.pokretac_ppi as pokretac, v.name as vrsta,
+     p.mjesto,p.nositelj, p.web,p.telefon, p.keywords, p.opis,
+     p.suradnici,p.pocetak,p.kraj,p.kontakt
+     from projekti p left join vrste v on p.vrsta_id =  v.id`, {
         raw: true
     }).then(function(projekt) {
         res.json({

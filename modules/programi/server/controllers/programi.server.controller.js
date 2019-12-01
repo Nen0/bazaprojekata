@@ -10,7 +10,7 @@ var path = require('path'),
 
 exports.programilist = function(req, res) {
 
-    db.sequelize.query(`select p.id, p.name, v.name as vrsta, p.mjesto,p.nositelj, p.web,p.telefon, p.keywords, p.opis   from programi p left join vrste v on p.vrsta_id =  v.id`, {
+    db.sequelize.query(`select p.id, p.name, p.pokretac_ppi as pokretac, v.name as vrsta, p.mjesto,p.nositelj, p.web,p.telefon, p.keywords, p.opis   from programi p left join vrste v on p.vrsta_id =  v.id`, {
         raw: true
     }).then(function(programi) {
         res.json({
