@@ -20,7 +20,7 @@ module.exports.init = function init(callback) {
   sequelize.sequelize
   .sync({
     //force: true
-    force: config.db.sync.force
+    force: true
   })
   .then(function (db) {
     var app = express.init(db);

@@ -1,4 +1,4 @@
- 
+
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('dobni_opsezi', {
     id: {
@@ -17,5 +17,5 @@ module.exports = function(sequelize, DataTypes) {
   });
 };
 
- 
+
 
