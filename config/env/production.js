@@ -61,7 +61,7 @@ module.exports = {
   app: {
     title: defaultEnvConfig.app.title
   },
-  livereload: true,
+  livereload: false,
   roles: ['admin', 'guest', 'user'],
 
   db: {
